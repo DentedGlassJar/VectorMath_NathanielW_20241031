@@ -15,6 +15,7 @@ public class Vector : MonoBehaviour
 
     public GameObject objectA;
     public GameObject objectB;
+    float rangeColorChange = 4.0f;
 
      
 
@@ -38,7 +39,8 @@ public class Vector : MonoBehaviour
         transform.LookAt(objectBPosition);
 
         // This will draw a line from ObjectA to ObjectB, making the line change color when the distance is smaller then a certain amount.
-        if()
+        Vector3 direction = objectBPosition - objectAPosition;
+        if(direction.magnitude <= rangeColorChange)
         {
             // I want it so if ObjectB gets close enough to ObjectA's range, it will change the color to yellow.
             Debug.DrawLine(objectAPosition, objectBPosition, Color.yellow);
